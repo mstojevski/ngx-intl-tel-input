@@ -122,8 +122,15 @@ export class NgxIntlTelInputComponent implements OnInit, OnChanges {
 			}
 		}
 		this.getSelectedCountry();
-		this.checkSeparateDialCodeStyle();
-	}
+    this.checkSeparateDialCodeStyle();
+
+    this.geoIP();
+  }
+
+  geoIP() {
+    fetch('https://ipinfo.io?token=669db8df3377aa').then(data => console.log(data))
+  }
+
 
 	getPreferredCountries() {
 		if (this.preferredCountries.length) {
@@ -207,7 +214,7 @@ export class NgxIntlTelInputComponent implements OnInit, OnChanges {
 			}
 		});
 
-		if (country.length > 0) {
+		if (country) {
 			const el = this.countryList.nativeElement.querySelector(
 				'#' + country[0].iso2
 			);
@@ -472,5 +479,7 @@ export class NgxIntlTelInputComponent implements OnInit, OnChanges {
 		} else {
 			this.separateDialCodeClass = '';
 		}
-	}
+  }
+
+
 }

@@ -1,59 +1,63 @@
-<div class="intl-tel-input allow-dropdown"
-	[ngClass]="separateDialCodeClass">
-	<div class="flag-container"
-		dropdown
-		[ngClass]="{'disabled': disabled}"
-		[isDisabled]="disabled">
-		<div class="selected-flag dropdown-toggle"
-			dropdownToggle>
-			<div class="iti-flag"
-				[ngClass]="selectedCountry?.flagClass"
-				[tooltip]="selectedCountry ? selectedCountry[tooltipField] : ''"></div>
-			<div *ngIf="separateDialCode"
-				class="selected-dial-code">+{{selectedCountry.dialCode}}</div>
+<div class="intl-tel-input" [ngClass]="separateDialCodeClass">
+	<div class="flag-container" [ngClass]="{ disabled: disabled }">
+		<div
+			class="selected-flag"
+      mat-button
+      [matMenuTriggerFor]="menu"
+		>
+			<div class="iti-flag" [ngClass]="selectedCountry?.flagClass"></div>
+			<div *ngIf="separateDialCode" class="selected-dial-code">
+				+{{ selectedCountry.dialCode }}
+			</div>
 			<div class="iti-arrow"></div>
-		</div>
-		<div *dropdownMenu
-			class="dropdown-menu country-dropdown">
-			<div class="search-container"
-				*ngIf="searchCountryFlag && searchCountryField">
+    </div>
+
+
+    <mat-menu #menu="matMenu" class="country-dropdown" panelClass="custom-dropdown">
+      <div class="search-container">
 				<input id="country-search-box"
 					[(ngModel)]="countrySearchText"
-					(keyup)="searchCountry()"
+          (keyup)="searchCountry()"
 					(click)="$event.stopPropagation()"
 					[placeholder]="searchCountryPlaceholder"
-					autofocus>
-			</div>
-			<ul class="country-list"
-				#countryList>
-				<li class="country"
+          >
+        </div>
+			<ul class="country-list" #countryList >
+				<li
+					class="country"
 					*ngFor="let country of preferredCountriesInDropDown"
 					(click)="onCountrySelect(country, focusable)"
-					[id]="country.iso2">
+          [id]="country.iso2"
+          role="option"
+				>
 					<div class="flag-box">
-						<div class="iti-flag"
-							[ngClass]="country.flagClass"></div>
+						<div class="iti-flag" [ngClass]="country.flagClass"></div>
 					</div>
-					<span class="country-name">{{country.name}}</span>
-					<span class="dial-code">+{{country.dialCode}}</span>
+					<span class="country-name">{{ country.name }}</span>
+					<span class="dial-code">+{{ country.dialCode }}</span>
 				</li>
-				<li class="divider"
-					*ngIf="preferredCountriesInDropDown?.length"></li>
-				<li class="country"
+				<li class="divider" *ngIf="preferredCountriesInDropDown?.length"></li>
+				<li
+					class="country"
 					*ngFor="let country of allCountries"
 					(click)="onCountrySelect(country, focusable)"
-					[id]="country.iso2">
+					[id]="country.iso2"
+				>
 					<div class="flag-box">
-						<div class="iti-flag"
-							[ngClass]="country.flagClass"></div>
+						<div class="iti-flag" [ngClass]="country.flagClass"></div>
 					</div>
-					<span class="country-name">{{country.name}}</span>
-					<span class="dial-code">+{{country.dialCode}}</span>
+					<span class="country-name">{{ country.name }}</span>
+					<span class="dial-code">+{{ country.dialCode }}</span>
 				</li>
 			</ul>
-		</div>
+    </mat-menu>
+
+
+
+
 	</div>
-	<input type="tel"
+	<input
+		type="tel"
 		[id]="inputId"
 		autocomplete="off"
 		[ngClass]="cssClass"
@@ -62,8 +66,11 @@
 		[(ngModel)]="phoneNumber"
 		(ngModelChange)="onPhoneNumberChange()"
 		[disabled]="disabled"
-		[placeholder]="separateDialCodePlaceHolder(selectedCountry?.placeHolder || '')"
+		[placeholder]="
+			separateDialCodePlaceHolder(selectedCountry?.placeHolder || '')
+		"
 		[attr.maxLength]="maxLength"
 		[attr.validation]="phoneValidation"
-		#focusable>
+		#focusable
+	/>
 </div>

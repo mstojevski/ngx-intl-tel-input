@@ -22,7 +22,8 @@ export class AppComponent {
 		CountryISO.UnitedKingdom,
 	];
 	phoneForm = new FormGroup({
-		phone: new FormControl(undefined, [Validators.required]),
+    phone: new FormControl(undefined, [Validators.required]),
+    country: new FormControl(undefined, [Validators.required]),
 	});
 
 	changePreferredCountries() {

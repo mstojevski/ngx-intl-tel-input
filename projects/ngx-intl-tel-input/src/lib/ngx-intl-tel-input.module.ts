@@ -1,13 +1,16 @@
-import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
-import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { CommonModule } from "@angular/common";
+import { ModuleWithProviders, NgModule } from "@angular/core";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
-import { CommonModule } from '@angular/common';
-import { ModuleWithProviders, NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NativeElementInjectorDirective } from "./directives/native-element-injector.directive";
+import { NgxIntlTelInputComponent } from "./ngx-intl-tel-input.component";
+import { NgxIntlTelInputService } from "./ngx-intl-tel-input.service";
+import { MatMenuModule } from "@angular/material/menu";
+import { MatAutocompleteModule } from "@angular/material/autocomplete";
 
-import { NativeElementInjectorDirective } from './directives/native-element-injector.directive';
-import { NgxIntlTelInputComponent } from './ngx-intl-tel-input.component';
-import { NgxIntlTelInputService } from './ngx-intl-tel-input.service';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { NgSelectModule } from '@ng-select/ng-select';
 
 @NgModule({
 	declarations: [NgxIntlTelInputComponent, NativeElementInjectorDirective],
@@ -15,8 +18,11 @@ import { NgxIntlTelInputService } from './ngx-intl-tel-input.service';
 		CommonModule,
 		FormsModule,
 		ReactiveFormsModule,
-		BsDropdownModule.forRoot(),
-		TooltipModule.forRoot(),
+		BrowserAnimationsModule,
+		MatMenuModule,
+		MatAutocompleteModule,
+    MatFormFieldModule,
+    NgSelectModule
 	],
 	exports: [NgxIntlTelInputComponent, NativeElementInjectorDirective],
 })

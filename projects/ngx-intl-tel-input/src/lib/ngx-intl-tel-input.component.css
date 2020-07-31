@@ -14,10 +14,12 @@ li.country:hover {
 	border: 1px solid #CCC;
 	width: fit-content;
 	padding: 1px;
-	border-collapse: collapse;
+  border-collapse: collapse;
+  box-shadow: 1px 1px 4px rgba(0,0,0,.2);
+  background-color: #fff;
 }
 .search-container {
-	position: relative; 
+	position: relative;
 }
 .search-container input {
 	width: 100%;
@@ -53,4 +55,26 @@ li.country:hover {
 .intl-tel-input.separate-dial-code.allow-dropdown.iti-sdc-3 input,
 .intl-tel-input.separate-dial-code.allow-dropdown.iti-sdc-4 input {
 	padding-left: 98px;
+}
+.country-list {
+  list-style: none;
+  padding:0;
+}
+.country {
+  display:flex;
+  align-items: center;
+  margin-bottom: 15px;
+
+}
+.country-name {
+  margin-left:5px;
+  margin-right:5px;
+}
+#mat-menu-panel-0 {
+  border: 1px solid #CCC;
+	width: fit-content;
+	padding: 1px;
+  border-collapse: collapse;
+  box-shadow: 1px 1px 4px rgba(0,0,0,.2);
+  background-color: #fff;
 }

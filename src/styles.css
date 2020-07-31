@@ -1,1 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~@ng-select/ng-select/themes/default.theme.css";
+
+#mat-menu-panel-0 {
+  border: 1px solid #CCC;
+	width: fit-content;
+	padding: 1px;
+  border-collapse: collapse;
+  box-shadow: 1px 1px 4px rgba(0,0,0,.2);
+  background-color: #fff;
+}
