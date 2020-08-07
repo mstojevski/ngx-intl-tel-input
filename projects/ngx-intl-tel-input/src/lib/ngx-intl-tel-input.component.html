@@ -1,34 +1,36 @@
 <div class="intl-tel-input" [ngClass]="separateDialCodeClass">
 	<div class="flag-container" [ngClass]="{ disabled: disabled }">
-		<div
-			class="selected-flag"
-      mat-button
-      [matMenuTriggerFor]="menu"
-		>
+		<div class="selected-flag" mat-button [matMenuTriggerFor]="menu">
 			<div class="iti-flag" [ngClass]="selectedCountry?.flagClass"></div>
 			<div *ngIf="separateDialCode" class="selected-dial-code">
 				+{{ selectedCountry.dialCode }}
 			</div>
 			<div class="iti-arrow"></div>
-    </div>
+		</div>
 
-
-    <mat-menu #menu="matMenu" class="country-dropdown" panelClass="custom-dropdown">
-      <div class="search-container">
-				<input id="country-search-box"
+		<mat-menu
+      #menu="matMenu"
+      [hasBackdrop]="false"
+			class="country-dropdown"
+			panelClass="custom-dropdown"
+		>
+			<div class="search-container">
+        <input
+          autocomplete="off"
+					id="country-search-box"
 					[(ngModel)]="countrySearchText"
-          (keyup)="searchCountry()"
+					(keyup)="searchCountry()"
 					(click)="$event.stopPropagation()"
-					[placeholder]="searchCountryPlaceholder"
-          >
-        </div>
-			<ul class="country-list" #countryList >
+          [placeholder]="searchCountryPlaceholder"
+				/>
+			</div>
+			<ul class="country-list" #countryList>
 				<li
 					class="country"
 					*ngFor="let country of preferredCountriesInDropDown"
 					(click)="onCountrySelect(country, focusable)"
-          [id]="country.iso2"
-          role="option"
+					[id]="country.iso2"
+					role="option"
 				>
 					<div class="flag-box">
 						<div class="iti-flag" [ngClass]="country.flagClass"></div>
@@ -50,11 +52,7 @@
 					<span class="dial-code">+{{ country.dialCode }}</span>
 				</li>
 			</ul>
-    </mat-menu>
-
-
-
-
+		</mat-menu>
 	</div>
 	<input
 		type="tel"

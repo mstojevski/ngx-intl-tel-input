@@ -124,11 +124,6 @@ export class NgxIntlTelInputComponent implements OnInit, OnChanges {
 		this.getSelectedCountry();
     this.checkSeparateDialCodeStyle();
 
-    this.geoIP();
-  }
-
-  geoIP() {
-    fetch('https://ipinfo.io?token=669db8df3377aa').then(data => console.log(data))
   }
 
 
@@ -176,8 +171,8 @@ export class NgxIntlTelInputComponent implements OnInit, OnChanges {
 				.querySelector('.country-list li')
 				.scrollIntoView({
 					behavior: 'smooth',
-					block: 'nearest',
-					inline: 'nearest',
+					block: 'center',
+					inline: 'center',
 				});
 			return;
 		}
@@ -221,8 +216,8 @@ export class NgxIntlTelInputComponent implements OnInit, OnChanges {
 			if (el) {
 				el.scrollIntoView({
 					behavior: 'smooth',
-					block: 'nearest',
-					inline: 'nearest',
+					block: 'center',
+					inline: 'center',
 				});
 			}
 		}
@@ -480,6 +475,4 @@ export class NgxIntlTelInputComponent implements OnInit, OnChanges {
 			this.separateDialCodeClass = '';
 		}
   }
-
-
 }

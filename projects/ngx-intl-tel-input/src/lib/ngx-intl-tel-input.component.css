@@ -1,3 +1,31 @@
+.input-tel {
+	padding: 13px 12px;
+	background-color: transparent;
+	font-family: "Source Sans Pro", sans-serif;
+	color: #2c3e50;
+	line-height: 14px;
+  font-weight: 600;
+  width:300px;
+	max-width:300px;
+	height: 40px;
+	border: 1px solid #d3d8e1;
+	border-radius: 5px;
+}
+.input-tel:focus {
+	outline: none;
+}
+#country-search-box {
+	position: relative;
+	top: 0;
+	z-index: 0;
+	margin-top: 0 !important;
+	margin-bottom: 0 !important;
+}
+.input-tel::placeholder {
+	color: #d3d7dd;
+	font-weight: normal;
+}
+
 li.country:hover {
 	background-color: rgba(0, 0, 0, 0.05);
 }
@@ -10,13 +38,16 @@ li.country:hover {
 .intl-tel-input.allow-dropdown .flag-container.disabled:hover .selected-flag {
 	background: none;
 }
+.intl-tel-input.separate-dial-code .selected-flag {
+	background-color: rgba(0, 0, 0, 0.05);
+}
 .country-dropdown {
-	border: 1px solid #CCC;
+	border: 1px solid #ccc;
 	width: fit-content;
 	padding: 1px;
-  border-collapse: collapse;
-  box-shadow: 1px 1px 4px rgba(0,0,0,.2);
-  background-color: #fff;
+	border-collapse: collapse;
+	box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+	background-color: #fff;
 }
 .search-container {
 	position: relative;
@@ -25,9 +56,12 @@ li.country:hover {
 	width: 100%;
 	border: none;
 	border-bottom: 1px solid #ccc;
-	padding-left: 10px;
+  padding-left: 10px;
+  padding-top:5px;
+  padding-bottom:5px;
+  outline:none;
 }
-.search-icon{
+.search-icon {
 	position: absolute;
 	z-index: 2;
 	width: 25px;
@@ -36,6 +70,15 @@ li.country:hover {
 .country-list {
 	position: relative;
 	border: none;
+	z-index: 2;
+	list-style: none;
+	text-align: left;
+	padding: 0;
+	margin: 0 0 0 -1px;
+	white-space: nowrap;
+  max-height: 400px;
+  max-width:400px;
+	overflow-y: scroll;
 }
 
 .intl-tel-input input#country-search-box {
@@ -49,7 +92,6 @@ li.country:hover {
 	width: 93px;
 }
 
-
 .intl-tel-input.separate-dial-code input,
 .intl-tel-input.separate-dial-code.allow-dropdown.iti-sdc-2 input,
 .intl-tel-input.separate-dial-code.allow-dropdown.iti-sdc-3 input,
@@ -57,24 +99,24 @@ li.country:hover {
 	padding-left: 98px;
 }
 .country-list {
-  list-style: none;
-  padding:0;
+	list-style: none;
+	padding: 0;
 }
 .country {
-  display:flex;
-  align-items: center;
-  margin-bottom: 15px;
-
+	display: flex;
+	align-items: center;
+	padding: 5px 10px;
+	cursor: pointer;
 }
 .country-name {
-  margin-left:5px;
-  margin-right:5px;
+	margin-left: 5px;
+	margin-right: 5px;
 }
-#mat-menu-panel-0 {
-  border: 1px solid #CCC;
-	width: fit-content;
-	padding: 1px;
-  border-collapse: collapse;
-  box-shadow: 1px 1px 4px rgba(0,0,0,.2);
-  background-color: #fff;
+
+.dial-code {
+	color: #999;
+}
+.selected-dial-code {
+	color: #333;
+	font-weight: normal;
 }

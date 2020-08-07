@@ -1,10 +1,14 @@
-@import "~@ng-select/ng-select/themes/default.theme.css";
-
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+}
 #mat-menu-panel-0 {
   border: 1px solid #CCC;
-	width: fit-content;
+  max-width:400px;
+  overflow-x:hidden;
 	padding: 1px;
   border-collapse: collapse;
   box-shadow: 1px 1px 4px rgba(0,0,0,.2);
   background-color: #fff;
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

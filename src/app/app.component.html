@@ -1,22 +1,19 @@
-	<form #f="ngForm"
-		[formGroup]="phoneForm">
-			<ngx-intl-tel-input [cssClass]="'custom'"
-				[preferredCountries]="preferredCountries"
-				[enableAutoCountrySelect]="false"
-				[enablePlaceholder]="true"
-				[searchCountryFlag]="true"
-				[searchCountryField]="[SearchCountryField.Iso2, SearchCountryField.Name]"
-				[selectFirstCountry]="true"
-				[maxLength]="15"
-				[phoneValidation]="true"
-				[separateDialCode]="separateDialCode"
-				name="phone"
-				formControlName="phone">
-			</ngx-intl-tel-input>
+	<form #f="ngForm" [formGroup]="phoneForm">
+		<ngx-intl-tel-input
+			[cssClass]="'input-tel'"
+			[preferredCountries]="preferredCountries"
+			[enableAutoCountrySelect]="false"
+			[enablePlaceholder]="true"
+			[searchCountryFlag]="true"
+			[searchCountryField]="[SearchCountryField.Iso2, SearchCountryField.Name]"
+			[selectFirstCountry]="true"
+			[maxLength]="15"
+			[phoneValidation]="true"
+			[separateDialCode]="separateDialCode"
+			name="phone"
+			formControlName="phone"
+		>
+		</ngx-intl-tel-input>
 	</form>
-
-  <!-- <div>
-    <div><strong>Is input valid:</strong>
-      <pre>{{ !f.form.controls['phone'].invalid }}</pre>
-    </div>
-  </div> -->
+<strong>Is input valid:</strong>
+<pre>{{ !f.form.controls["phone"].invalid }}</pre>
