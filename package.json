@@ -30,8 +30,6 @@
     "core-js": "^2.6.9",
     "google-libphonenumber": "^3.2.3",
     "intl-tel-input": "^14.1.0",
-    "jquery": "^3.5.0",
-    "popper.js": "^1.15.0",
     "rxjs": "~6.5.5",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"

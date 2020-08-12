@@ -7,7 +7,7 @@
 		"@angular/forms": "8.x - 9.x",
 		"google-libphonenumber": "^3.2.1",
 		"intl-tel-input": "^14.0.6",
-		"@angular/material": "^9.2.4"
+		"@angular/material": "8.x - 9.x"
 	},
 	"repository": {
 		"type": "git",
